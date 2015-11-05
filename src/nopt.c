@@ -1,7 +1,7 @@
 #include <nopoll.h>
 
 
-void listner_on_message(noPollCtx * ctx, noPollConn * conn, noPollMsg * msg, noPollPtr * user_data )
+void listener_on_message(noPollCtx * ctx, noPollConn * conn, noPollMsg * msg, noPollPtr * user_data )
 {
            // print the message (for debugging purposes) and reply
         printf ("Listener received (size: %d, ctx refs: %d): (first [removed] bytes, fragment: %d) '%s'\n", 
@@ -24,13 +24,13 @@ int main(int argc, char *argv[])
        //handle error here
    }
 
-   noPollConn * listner = nopoll_listener_new (ctx, "0.0.0.0", "1234");
-   if(! nopoll_conn_is_ok (listner))
+   noPollConn * listener = nopoll_listener_new (ctx, "172.23.153.112", "50004");
+   if(! nopoll_conn_is_ok (listener))
    {
 	//handle error here
    }
 
-   nopoll_ctx_set_on_msg(ctx, listner_on_message, NULL);
+   nopoll_ctx_set_on_msg(ctx, listener_on_message, NULL);
 
    nopoll_loop_wait(ctx,0);
 // release the context

@@ -58,8 +58,8 @@ depend:
 # for more information on install read MAN(1) install
 ########################################################
 install: all
-	install -b -s $(APP) $(INSTALL_DIR)
-	
+	install -d $(INSTALL_DIR)
+	install -b -s ${APP} ${INSTALL_DIR}	
 clean:
 	rm -f $(APP) *.o *.core
 
