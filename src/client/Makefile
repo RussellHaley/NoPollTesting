@@ -5,8 +5,8 @@
 # These are the only variables you will need to define
 ######################################################
 
-APP            = noptd 
-C_SRC          = noptd.c #hello.c
+APP            = noptc 
+C_SRC          = noptc.c #hello.c
 #CPP_SRC        = myapp.cpp  base_classes.cpp
 INSTALL_DIR    = /usr/local/lib/nopoll-test/
 CFLAGS	       +=-I/usr/local/include/nopoll
@@ -15,4 +15,4 @@ LINK		+=-L/usr/local/lib -lnopoll
 # And include the template Makefile, make sure its
 # path is correct.  
  
-.include "../mk/bsd_make.mk"
+.include "../../mk/bsd_make.mk"

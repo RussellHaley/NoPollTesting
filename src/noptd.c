@@ -60,6 +60,7 @@ int main(int argc, char *argv[])
 
    nopoll_loop_wait(ctx,0);
 // release the context
+	printf("got here");
    nopoll_ctx_unref(ctx);
 }
 
